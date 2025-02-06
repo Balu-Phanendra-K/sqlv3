@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SQL Table Replacer</title>
+	<script src="script.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        h2 {
+            text-align: center;
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            resize: vertical;
+            margin-bottom: 10px;
+        }
+
+        button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+textarea {
+            width: 1000px;
+            height: 200px;
+            padding: 10px;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            resize: vertical;
+            margin-bottom: 10px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .output {
+            margin-top: 20px;
+            padding: 10px;
+            background: white;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .summary {
+            margin-top: 10px;
+            font-weight: bold;
+            color: green;
+        }
+        .no-changes {
+            color: red;
+        }
+        .download-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h2>SQL Table Replacer</h2>
+    <label for="activityName">Activity Name:</label>
+    <input type="text" id="activityName" placeholder="Enter Activity Name..." required>
+    <label for="sqlInput">Enter SQL Query:</label>
+    <textarea id="sqlInput" placeholder="Write your SQL query here..."></textarea>
+    <button onclick="replaceTables()">Generate</button>
+    <div class="output">
+        <label for="sqlOutput">Modified SQL Query:</label>
+        <textarea id="sqlOutput" readonly></textarea>
+        <div class="download-buttons">
+            <button onclick="downloadSQLFile(true)">Download Original</button>
+            <button onclick="downloadSQLFile(false)">Download Updated</button>
+        </div>
+    </div>
+    <div class="summary" id="summary"></div>
+   
+</body>
+</html>
+
+
+
+
+
+
+
+
+
